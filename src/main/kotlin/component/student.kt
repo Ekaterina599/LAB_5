@@ -13,7 +13,7 @@ external interface StudentProps : Props {
 val CStudent = FC<StudentProps>("Student") { props ->
     div {
         props.student.let {
-            if (useContext(shortOutput) == "Short")
+            if (useContext(primer).first == "Short")
                 +"${it.firstname[0]}. ${it.surname}"
             else
                 +"${it.firstname} ${it.surname}"
