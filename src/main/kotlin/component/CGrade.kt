@@ -18,17 +18,21 @@ external interface GradeProps: Props {
 val CGrade =FC<GradeProps>("Grade") { props ->
     val list = listOf(1,2,3,4,5)
     select {
-        css{ backgroundColor = useContext(colorContext)[props.grade-1] }
+        css{ backgroundColor = useContext(primer).second[props.grade-1] }
         onChange = { props.setGrade(it.target.value.toInt()) }
         value = props.grade.toString()
         list.mapIndexed { index, it ->
             option {
-                css{ backgroundColor = useContext(colorContext)[index]}
+               css{ backgroundColor = useContext(primer).second[index]}
                 +it.toString()
             }
         }
     }
 }
+
+
+
+
 
 
 
